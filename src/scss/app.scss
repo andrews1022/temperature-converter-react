@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 // Colors:
-$white-smoke: #f5f5f5;
+$white-smoke: #f7f7f7;
 $nero: #1b1b1b;
 $witch-haze: #d4fc79;
 $granny-smith-apple: #96e6a1;
@@ -69,9 +69,6 @@ img {
     }
   }
 
-  // &__calc {
-  // }
-
   &__group {
     display: flex;
     align-items: center;
@@ -100,6 +97,7 @@ img {
   }
 
   &__input {
+    background-color: transparent;
     border: none;
     font-size: 1.5rem;
     padding: 0.25rem 0;
