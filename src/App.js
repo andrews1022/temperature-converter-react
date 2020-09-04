@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import TempCalc from './TempCalc';
-import './App.css';
+import Header from './components/Header';
+import TempCalc from './components/TempCalc';
+import './scss/app.min.css';
 
 const App = () => {
   return (
