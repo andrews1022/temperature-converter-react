@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TempInput from './TempInput';
+import Footer from './Footer';
 
 const TempCalc = () => {
 	const [celsius, setCelsius] = useState(0);
@@ -39,6 +40,7 @@ const TempCalc = () => {
 			<button className='temp__btn' onClick={resetTemps}>
 				Reset
 			</button>
+			<Footer />
 		</div>
 	);
 };

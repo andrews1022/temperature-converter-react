@@ -9,6 +9,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  color: inherit;
   margin: 0;
   padding: 0;
   text-transform: lowercase;
@@ -179,6 +180,26 @@ img {
   .temp__btn {
     font-size: 1.5rem;
     width: 75%;
+  }
+}
+
+.footer {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.footer__icon-row {
+  margin-top: 1.5%;
+}
+
+.footer__icon-link {
+  margin: 0 0.375%;
+  transition: all 175ms ease-in-out;
+}
+
+@media (hover) {
+  .footer__icon-link:hover, .footer__icon-link:active, .footer__icon-link:focus {
+    color: #349dbd;
   }
 }
 /*# sourceMappingURL=app.css.map */
