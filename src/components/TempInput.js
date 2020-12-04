@@ -1,24 +1,24 @@
 import React from 'react';
 
-const TempInput = (props) => {
-  return (
-    <div className='temp__group'>
-      <label className='temp__label' for={`${props.type}-input`}>
-        {props.type}
-      </label>
-      <div className='temp__wrapper'>
-        <input
-          className='temp__input'
-          type='number'
-          name={`${props.type}-input`}
-          id={`${props.type}-input`}
-          value={props.value}
-          onChange={props.convertTemp}
-        />
-        <span className='temp__span'></span>
-      </div>
-    </div>
-  );
+const TempInput = ({ type, value, convertTemp }) => {
+	return (
+		<div className='temp__group'>
+			<label className='temp__label' for={`${type}-input`}>
+				{type}
+			</label>
+			<div className='temp__wrapper'>
+				<input
+					className='temp__input'
+					type='number'
+					name={`${type}-input`}
+					id={`${type}-input`}
+					value={value}
+					onChange={convertTemp}
+				/>
+				<span className='temp__span'></span>
+			</div>
+		</div>
+	);
 };
 
 export default TempInput;
