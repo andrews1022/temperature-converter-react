@@ -1,46 +1,22 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import TempInput from './TempInput';
-import Footer from './Footer';
+import { initialTemps, tempReducer } from './../reducers/tempReducer';
 
 const TempCalc = () => {
-	const [celsius, setCelsius] = useState(0);
-	const [fahrenheit, setFahrenheit] = useState(0);
-	const [kelvin, setKelvin] = useState(0);
-
-	const convertFromCelsius = (e) => {
-		setCelsius(+e.target.value);
-		setFahrenheit((+e.target.value * 1.8 + 32).toFixed(2));
-		setKelvin((+e.target.value + 273.15).toFixed(2));
-	};
-
-	const convertFromFahrenheit = (e) => {
-		setCelsius(((+e.target.value - 32) / 1.8).toFixed(2));
-		setFahrenheit(+e.target.value);
-		setKelvin(((+e.target.value - 32) / 1.8 + 273.15).toFixed(2));
-	};
-
-	const convertFromKelvin = (e) => {
-		setCelsius((+e.target.value - 273.15).toFixed(2));
-		setFahrenheit(((+e.target.value - 273.15) * 1.8 + 32).toFixed(2));
-		setKelvin(+e.target.value);
-	};
-
-	const resetTemps = () => {
-		setCelsius(0);
-		setFahrenheit(0);
-		setKelvin(0);
-	};
+	const [tempState, dispatch] = useReducer(tempReducer, initialTemps);
 
 	return (
-		<div className='temp__calc'>
-			<h1 className='temp__heading'>Temperature Converter</h1>
-			<TempInput type='celsius' value={celsius} convertTemp={convertFromCelsius} />
-			<TempInput type='fahrenheit' value={fahrenheit} convertTemp={convertFromFahrenheit} />
-			<TempInput type='kelvin' value={kelvin} convertTemp={convertFromKelvin} />
-			<button className='temp__btn' onClick={resetTemps}>
-				Reset
-			</button>
-			<Footer />
+		<div className='temp'>
+			{/* for each key in the temp state object, create a TempInput component for it */}
+			{Object.keys(tempState).map((tempType, idx) => (
+				<TempInput key={idx} tempType={tempType} tempState={tempState} dispatch={dispatch} />
+			))}
+
+			<div className='temp__group'>
+				<button className='temp__reset' onClick={() => dispatch({ type: 'reset_temps' })}>
+					Reset
+				</button>
+			</div>
 		</div>
 	);
 };

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+html {
+	box-sizing: border-box;
+	font-family: $fontLato;
+	font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+button,
+input {
+	font-family: $fontLato;
+}
+
+p,
+label,
+button,
+input {
+	font-size: 1.25rem;
+}
