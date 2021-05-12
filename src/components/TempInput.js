@@ -11,7 +11,7 @@ const TempInput = ({ tempType, tempState, dispatch }) => {
 				type='number'
 				name={`temp_${tempType}`}
 				id={`temp_${tempType}`}
-				value={tempState[tempType]} // dynamically set the value of the input using 'object[property]' syntax
+				value={tempState[tempType]} // dynamically set the value of the input using the 'object[property]' syntax
 				onChange={(e) => dispatch({ type: `convert_${tempType}`, payload: e.target.value })}
 			/>
 		</div>
